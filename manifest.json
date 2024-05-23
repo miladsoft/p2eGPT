@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Persian Speech to Text for ChatGPT",
+    "version": "1.0",
+    "description": "Convert Persian speech to text and insert it into ChatGPT for translation.",
+    "permissions": ["activeTab", "storage", "tts"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://chat.openai.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
